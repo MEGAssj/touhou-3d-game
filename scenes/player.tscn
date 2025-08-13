@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyimcp151m7mh"]
+
+[ext_resource type="Script" uid="uid://lq8f60i6r47j" path="res://scenes/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://m3dwau8jhock" path="res://scenes/TAC Reimu.fbx" id="2_g2els"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u8vuu"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134987, 2.41934, -0.00634551)
+shape = SubResource("CylinderShape3D_u8vuu")
+
+[node name="visual" type="Node3D" parent="."]
+
+[node name="camera_mount" type="Node3D" parent="."]
+transform = Transform3D(-3.78154, -0.0261916, 0.00898826, -0.0990269, 0.999656, 0.00174533, 0.0341637, -0.00150937, 0.999958, 0.0673897, 1.96618, 0.444681)
+
+[node name="Camera3D" type="Camera3D" parent="camera_mount"]
+transform = Transform3D(0.264341, 9.86347e-10, -1.39698e-09, -1.50067e-10, 1, 0, 5.58794e-09, 0, 1, -0.0359517, 0.814031, 1.10025)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000820398, 1.29831, -0.00708866)
+
+[node name="TAC Reimu" parent="MeshInstance3D" instance=ExtResource("2_g2els")]
+transform = Transform3D(-0.9977, 0, -0.0272235, 0, 0.998071, 0, 0.0272235, 0, -0.9977, 0, 0, 0)
